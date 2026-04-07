@@ -271,7 +271,6 @@ nav a:hover {
 }
 
 .btn-green {
-  background-color: #107c10;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -279,89 +278,122 @@ nav a:hover {
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s;
-  width: 100%;
+border-radius: 4px;
+width: 278px;
+height: 60px;
+background: #8dd83d;
 }
 
 .btn-green:hover {
-  background-color: #0e6b0e;
+  background-color: #339e33;
 }
 
 /* Exclusive Games Section */
 .exclusive-games {
-  padding: 60px 40px;
-  background-color: #1a1a1a;
-  text-align: center;
+    padding: 60px 40px;
+    background-color: #1a1a1a;
+    text-align: center;
 }
 
 .exclusive-games h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
+    font-size: 28px;
+    margin-bottom: 30px;
 }
 
 .games-slider {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 353px);
+    gap: 20px;
+    justify-content: center;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .game-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s;
+    width: 353px;
+    height: 462px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .game-card:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .game-image {
-  height: 200px;
-  background-color: #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 60px;
+    height: 250px;
+    background-color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .game-body {
-  padding: 15px;
-  text-align: left;
+    padding: 20px;
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .game-title {
-  color: #333;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 8px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .game-desc {
-  color: #666;
-  font-size: 13px;
-  margin-bottom: 15px;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.game-body .btn-green {
+    background-color: #107C10;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.game-body .btn-green:hover {
+    background-color: #0e6b0e;
 }
 
 .store-btn {
-  border-radius: 4px;
-  width: 207px;
-  height: 53px;
-  background: linear-gradient(180deg, #686c6f 0%, #373a3c 100%);
-  display: block;
-  margin: 30px auto 0;
-  color: white;
-  border: none;
-  padding: 12px 40px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.3s;
+    border-radius: 4px;
+    width: 207px;
+    height: 53px;
+    background: linear-gradient(180deg, #686c6f 0%, #373a3c 100%);
+    display: block;
+    margin: 30px auto 0;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .store-btn:hover {
-  background-color: #0e6b0e;
+    background: linear-gradient(180deg, #107C10 0%, #0e6b0e 100%);
 }
 
 /* Design Lab Section */
@@ -387,9 +419,10 @@ nav a:hover {
 }
 
 .design-lab p {
-  color: #666;
-  font-size: 16px;
   margin-bottom: 25px;
+font-weight: 400;
+font-size: 24px;
+color: #fff;
 }
 
 .design-lab-buttons {
@@ -399,19 +432,18 @@ nav a:hover {
 }
 
 .btn-dark {
-  background-color: #333;
   color: white;
   border: none;
   padding: 12px 30px;
   font-size: 14px;
   cursor: pointer;
-  border-radius: 4px;
   transition: background 0.3s;
+  background: linear-gradient(180deg, #686c6f 0%, #373a3c 100%);
+  border-radius: 4px;
+width: 207px;
+height: 60px;
 }
 
-.btn-dark:hover {
-  background-color: #444;
-}
 
 .controllers-grid {
   display: grid;
@@ -446,10 +478,10 @@ footer {
 }
 
 .footer-column h3 {
-  color: #107c10;
+ color: #7dd42f;
   font-size: 14px;
   margin-bottom: 15px;
-  text-transform: uppercase;
+ 
 }
 
 .footer-column a {
@@ -485,8 +517,9 @@ footer {
   align-items: center;
   max-width: 1200px;
   margin: 30px auto 0;
-  font-size: 12px;
-  color: #999;
+font-weight: 400;
+font-size: 16px;
+color: #fff;
 }
 
 /* Responsive */
