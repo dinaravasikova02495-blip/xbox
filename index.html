@@ -3,522 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xbox Official Site</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a1a;
-            color: white;
-        }
-
-        /* Header */
-        header {
-            background-color: #2b2b2b;
-            padding: 12px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 20px;
-            font-weight: 600;
-            color: #107C10;
-        }
-
-        .logo svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background: white;
-            border-radius: 4px;
-            padding: 6px 12px;
-            gap: 8px;
-        }
-
-        .search-bar input {
-            border: none;
-            outline: none;
-            font-size: 14px;
-            width: 200px;
-        }
-
-        .my-xbox {
-            color: #107C10;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 500px;
-            background: linear-gradient(135deg, #000428 0%, #004e92 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 48px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-subtitle {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            background-color: #107C10;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #0e6b0e;
-        }
-
-        .btn-secondary {
-            background-color: rgba(0,0,0,0.6);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 12px 30px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-
-        .slider-arrows {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-
-        .slider-arrows span {
-            font-size: 30px;
-            color: #107C10;
-            cursor: pointer;
-        }
-
-        /* Best Value Section */
-        .best-value {
-            padding: 60px 40px;
-            text-align: center;
-            background-color: #2b2b2b;
-        }
-
-        .section-header {
-            margin-bottom: 40px;
-        }
-
-        .xbox-logo {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 15px;
-        }
-
-        .section-header h2 {
-            font-size: 32px;
-            font-weight: 300;
-        }
-
-        .section-header p {
-            font-size: 18px;
-            color: #ccc;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            text-align: left;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .card-image {
-            height: 180px;
-            background-color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-image img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-title {
-            color: #333;
-            font-size: 14px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-
-        .card-text {
-            color: #333;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .card-text span {
-            display: block;
-            font-weight: 400;
-            font-size: 16px;
-        }
-
-        .btn-green {
-            background-color: #107C10;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-            width: 100%;
-        }
-
-        .btn-green:hover {
-            background-color: #0e6b0e;
-        }
-
-        /* Exclusive Games Section */
-        .exclusive-games {
-            padding: 60px 40px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="80" fill="rgba(255,255,255,0.05)">✈</text></svg>');
-            background-size: cover;
-            text-align: center;
-        }
-
-        .exclusive-games h2 {
-            font-size: 28px;
-            margin-bottom: 30px;
-        }
-
-        .games-slider {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .game-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .game-card:hover {
-            transform: scale(1.05);
-        }
-
-        .game-image {
-            height: 200px;
-            background-color: #444;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-        }
-
-        .game-body {
-            padding: 15px;
-            text-align: left;
-        }
-
-        .game-title {
-            color: #333;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .game-desc {
-            color: #666;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
-
-        .store-btn {
-            display: block;
-            margin: 30px auto 0;
-            background-color: rgba(0,0,0,0.6);
-            color: white;
-            border: none;
-            padding: 12px 40px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .store-btn:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-
-        /* Design Lab Section */
-        .design-lab {
-            padding: 60px 40px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .design-lab-content {
-            max-width: 500px;
-        }
-
-        .design-lab h2 {
-            color: #333;
-            font-size: 36px;
-            font-weight: 300;
-            margin-bottom: 10px;
-        }
-
-        .design-lab p {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
-
-        .design-lab-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-dark {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .btn-dark:hover {
-            background-color: #444;
-        }
-
-        .controllers-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .controller-item {
-            width: 120px;
-            height: 80px;
-            background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
-            border-radius: 40px 40px 20px 20px;
-            position: relative;
-        }
-
-        .controller-item::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 25px;
-            width: 70px;
-            height: 40px;
-            background: #999;
-            border-radius: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2b2b2b;
-            padding: 40px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-column h3 {
-            color: #107C10;
-            font-size: 14px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .footer-column a {
-            display: block;
-            color: #ccc;
-            text-decoration: none;
-            font-size: 13px;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            color: #107C10;
-            font-size: 18px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #444;
-            margin-top: 30px;
-            padding-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 30px auto 0;
-            font-size: 12px;
-            color: #999;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .games-slider {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .design-lab {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+    <title>васикова</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <svg viewBox="0 0 24 24" fill="#107C10">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
-                <circle cx="12" cy="12" r="3"/>
-            </svg>
-            XBOX
+            <img src="./images/logo.png" alt="Xbox">
         </div>
-
         <nav>
             <a href="#">Games</a>
             <a href="#">Consoles</a>
             <a href="#">Community</a>
         </nav>
-
         <div class="search-bar">
             <span>🔍</span>
             <input type="text" placeholder="Search">
         </div>
-
         <div class="my-xbox">
             <span>👤</span>
             My XBOX
@@ -526,7 +28,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" style="background-image: url('./images/Carousel.png');">
         <div class="hero-content">
             <h1 class="hero-title">Star Wars Battlefront II</h1>
             <p class="hero-subtitle">The Next Generation of Star Wars Gaming</p>
@@ -544,11 +46,8 @@
     <!-- Best Value Section -->
     <section class="best-value">
         <div class="section-header">
-            <div class="xbox-logo">
-                <svg viewBox="0 0 24 24" fill="#107C10">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#2b2b2b" stroke-width="2" fill="none"/>
-                </svg>
+            <div class="spahe">
+                <img src="./images/Shape.png" alt="shape">
             </div>
             <h2>The best value</h2>
             <p>in games and entertainment</p>
@@ -556,8 +55,8 @@
 
         <div class="cards-grid">
             <div class="card">
-                <div class="card-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);">
-                    <div style="color: #107C10; font-size: 60px;">🎮</div>
+                <div class="card-image">
+                    <img src="./images/xbox-one-x.png" alt="XBOX ONE X">
                 </div>
                 <div class="card-body">
                     <div class="card-title">XBOX ONE X</div>
@@ -570,22 +69,22 @@
             </div>
 
             <div class="card">
-                <div class="card-image" style="background: white;">
-                    <div style="color: #6441a5; font-size: 36px; font-weight: bold;">mixer</div>
+                <div class="card-image">
+                    <img src="./images/mixer.png" alt="mixer">
                 </div>
                 <div class="card-body">
-                    <div class="card-title">mixer Streaming</div>
+                    <div class="card-title">Mixer Streaming</div>
                     <div class="card-text">
                         The Next Generation
-                        <span>Of Life Game Streaming</span>
+                        <span>Of Live Game Streaming</span>
                     </div>
-                    <button class="btn-green">Start Watching mixer</button>
+                    <button class="btn-green">Start Watching Mixer</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-image" style="background: white;">
-                    <div style="color: #d4a017; font-size: 28px; font-weight: bold;">GAMES<br>WITH <span style="background: #d4a017; color: white; padding: 2px 8px;">GOLD</span></div>
+                <div class="card-image">
+                    <img src="./images/gold_games.png" alt="gold_games">
                 </div>
                 <div class="card-body">
                     <div class="card-title">Free Games Every Month</div>
@@ -602,11 +101,10 @@
     <!-- Exclusive Games Section -->
     <section class="exclusive-games">
         <h2>Exclusive games on XBOX</h2>
-
         <div class="games-slider">
             <div class="game-card">
-                <div class="game-image" style="background: linear-gradient(135deg, #556b2f 0%, #8fbc8f 100%);">
-                    🎖️
+                <div class="game-image">
+                     <img src="./images/game1.png" alt="game1">
                 </div>
                 <div class="game-body">
                     <div class="game-title">Call of Duty: WWII</div>
@@ -616,8 +114,8 @@
             </div>
 
             <div class="game-card">
-                <div class="game-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
-                    🚀
+                <div class="game-image">
+                   <img src="./images/game2.png" alt="game2">
                 </div>
                 <div class="game-body">
                     <div class="game-title">Destiny 2</div>
@@ -627,8 +125,8 @@
             </div>
 
             <div class="game-card">
-                <div class="game-image" style="background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);">
-                    🏔️
+                <div class="game-image">
+                  <img src="./images/game3.png" alt="game3">
                 </div>
                 <div class="game-body">
                     <div class="game-title">STEEP</div>
@@ -638,8 +136,8 @@
             </div>
 
             <div class="game-card">
-                <div class="game-image" style="background: linear-gradient(135deg, #ff8c00 0%, #ff4500 100%);">
-                    🏎️
+                <div class="game-image">
+          <img src="./images/game4.png" alt="game4">
                 </div>
                 <div class="game-body">
                     <div class="game-title">Forza Motorsport 7</div>
@@ -648,30 +146,23 @@
                 </div>
             </div>
         </div>
-
         <button class="store-btn">XBOX Store</button>
     </section>
 
     <!-- Design Lab Section -->
-    <section class="design-lab">
-        <div class="design-lab-content">
-            <h2>Xbox Design Lab</h2>
-            <p>Make yours one in a billion with new colors, metallic finishes and rubberized grips.</p>
-            <div class="design-lab-buttons">
-                <button class="btn-dark">Design Yours</button>
-                <button class="btn-green">Explore Consoles & Accessories</button>
-            </div>
+  <section class="design-lab" style="background-image: url('./images/Rectangle.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="design-lab-content">
+        <h2>Xbox Design Lab</h2>
+        <p>Make yours one in a billion with new colors, metallic finishes and rubberized grips.</p>
+        <div class="design-lab-buttons">
+            <button class="btn-dark">Design Yours</button>
+            <button class="btn-green">Explore Consoles & Accessories</button>
         </div>
-
-        <div class="controllers-grid">
-            <div class="controller-item" style="background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);"></div>
-            <div class="controller-item" style="background: linear-gradient(135deg, #fff 0%, #ddd 100%);"></div>
-            <div class="controller-item" style="background: linear-gradient(135deg, #ff6347 0%, #dc143c 100%);"></div>
-            <div class="controller-item" style="background: linear-gradient(135deg, #9370db 0%, #8a2be2 100%);"></div>
-            <div class="controller-item" style="background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);"></div>
-            <div class="controller-item" style="background: linear-gradient(135deg, #2e8b57 0%, #006400 100%);"></div>
-        </div>
-    </section>
+    </div>
+    <div class="controllers-grid">
+        <!-- Здесь могут быть контроллеры -->
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -683,7 +174,6 @@
                 <a href="#">Privacy & cookies</a>
                 <a href="#">Terms of use</a>
             </div>
-
             <div class="footer-column">
                 <h3>Developers</h3>
                 <a href="#">Games</a>
@@ -691,20 +181,18 @@
                 <a href="#">Creators Program</a>
                 <a href="#">Designed for XBOX</a>
             </div>
-
             <div class="footer-column">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#">f</a>
+                    <a href="#">📘</a>
                     <a href="#">🐦</a>
                     <a href="#">📷</a>
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <span>English (United States)</span>
-            <span>© Microsoft 2017</span>
+            <span>© Microsoft 2024</span>
         </div>
     </footer>
 </body>
